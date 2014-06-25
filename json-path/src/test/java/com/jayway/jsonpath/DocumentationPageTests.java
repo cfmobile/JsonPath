@@ -47,37 +47,37 @@ public class DocumentationPageTests {
 
     @Test
     public void test_1() {
-        System.out.println(JsonPath.read(JSON, "$.store.bicycle"));
+        System.out.println((Object)JsonPath.read(JSON, "$.store.bicycle"));
     }
 
     @Test
     public void test_2() {
-        System.out.println(JsonPath.read(JSON, "$.store.book[0]"));
+        System.out.println((Object)JsonPath.read(JSON, "$.store.book[0]"));
     }
 
     @Test
     public void test_3() {
-        System.out.println(JsonPath.read(JSON, "$.store.book[*].author"));
+        System.out.println((Object)JsonPath.read(JSON, "$.store.book[*].author"));
     }
 
     @Test
     public void test_4() {
-        System.out.println(JsonPath.read(JSON, "$.store.book[-2:].author"));
+        System.out.println((Object)JsonPath.read(JSON, "$.store.book[-2:].author"));
     }
 
     @Test
     public void test_5() {
-        System.out.println(JsonPath.read(JSON, "$.store.book[1:3].author"));
+        System.out.println((Object)JsonPath.read(JSON, "$.store.book[1:3].author"));
     }
 
     @Test
     public void test_6() {
-        System.out.println(JsonPath.read(JSON, "$.store.book[0]['author', 'category']"));
+        System.out.println((Object)JsonPath.read(JSON, "$.store.book[0]['author', 'category']"));
     }
 
     @Test
     public void test_7() {
-        System.out.println(JsonPath.read(JSON, "$..price"));
+        System.out.println((Object)JsonPath.read(JSON, "$..price"));
     }
 
 }

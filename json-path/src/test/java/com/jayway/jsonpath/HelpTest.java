@@ -86,14 +86,14 @@ public class HelpTest {
 
     @Test
     public void sample_one_a(){
-        System.out.println(JsonPath.read(JSON2, "$.['error', 'header']"));
-        System.out.println(JsonPath.read(JSON2, "$.contents[*].['groupType', 'type', 'extra']"));
+        System.out.println((Object)JsonPath.read(JSON2, "$.['error', 'header']"));
+        System.out.println((Object)JsonPath.read(JSON2, "$.contents[*].['groupType', 'type', 'extra']"));
     }
 
     @Test
     public void sample_one_b(){
-        System.out.println(JsonPath.read(JSON2, "$.['error', 'header']"));
-        System.out.println(JsonPath.read(JSON2, "$.contents[*].['groupType', 'type']"));
+        System.out.println((Object)JsonPath.read(JSON2, "$.['error', 'header']"));
+        System.out.println((Object)JsonPath.read(JSON2, "$.contents[*].['groupType', 'type']"));
     }
 
     @Test

@@ -3,6 +3,7 @@ package com.jayway.jsonpath;
 import com.jayway.jsonpath.internal.Utils;
 import com.jayway.jsonpath.spi.json.JsonProvider;
 import com.jayway.jsonpath.spi.json.JsonProviderFactory;
+
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
@@ -10,9 +11,8 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-import static junit.framework.Assert.*;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 public class IssuesTest {
 
@@ -210,7 +210,7 @@ public class IssuesTest {
         //Configuration configuration = Configuration.defaultConfiguration();
 
         String json = "{\"a\":{\"b\":1,\"c\":2}}";
-        System.out.println(JsonPath.parse(json, configuration).read("a.d"));
+        System.out.println((Object)JsonPath.parse(json, configuration).read("a.d"));
     }
     @Test
     public void issue_22c() throws Exception {
@@ -225,8 +225,8 @@ public class IssuesTest {
     @Test
     public void issue_22b() throws Exception {
         String json = "{\"a\":[{\"b\":1,\"c\":2},{\"b\":5,\"c\":2}]}";
-        System.out.println(JsonPath.read(json, "a[?(@.b==5)].d"));
-        System.out.println(JsonPath.read(json, "a[?(@.b==5)].d"));
+        System.out.println((Object)JsonPath.read(json, "a[?(@.b==5)].d"));
+        System.out.println((Object)JsonPath.read(json, "a[?(@.b==5)].d"));
     }
 
     @Test(expected = PathNotFoundException.class)
@@ -315,7 +315,7 @@ public class IssuesTest {
                 "]";
 
 
-        assertEquals(1, JsonPath.read(json, "$[0].a"));
+        assertEquals(new Integer(1), JsonPath.read(json, "$[0].a"));
     }
 
     @Test(expected = PathNotFoundException.class)
