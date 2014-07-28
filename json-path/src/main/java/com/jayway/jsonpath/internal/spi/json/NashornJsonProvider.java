@@ -41,6 +41,7 @@ import jdk.nashorn.internal.runtime.ScriptObject;
  */
 @SuppressWarnings("restriction")
 public class NashornJsonProvider implements JsonProvider {
+    private static final Object[] EMPTY_ARRAY = new Object[] {};
 
     @Override
     public Object parse(String json) throws InvalidJsonException {
@@ -77,7 +78,7 @@ public class NashornJsonProvider implements JsonProvider {
 
     @Override
     public Object createArray() {
-        return NativeArray.construct(false, null);
+        return jdk.nashorn.internal.objects.Global.allocate(EMPTY_ARRAY);
     }
 
     @Override
